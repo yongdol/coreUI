@@ -1,0 +1,34 @@
+{
+  "member": {
+    "login": "LOGIN",
+    "logout": "LOGOUT",
+    "signup": "SIGNUP",
+    "rumember": "Don't Have An Account?"
+  },
+  "btn" : {
+    "analysis": "ANALYSIS",
+    "waiting": "ANALYSIS QUEUE",
+    "detail": "DETAIL",
+    "mydata": "DEMO PLAY",
+    "close": "CLOSE",
+    "sample_download": "SAMPLE FILE DOWNLOAD"
+  },
+  "title": {
+    "summary": "SUMMARY",
+    "input_data": "INPUT DATA",
+    "sales_data": "SALES DATA",
+    "promo_data": "PROMOTION DATA",
+    "waiting": "REQUEST QUEUE"
+  },
+  "desc": {
+    "mydata": {
+      "desc1": "When you upload the data to an Excel file, a corresponding analysis demo is created. Currently pending analysis ",
+      "desc2": "Please modify the downloaded SAMPLE FILE and upload it. Be sure to read and follow the instructions in the SAMPLE FILE.Otherwise, the analysis algorithm can not be guaranteed to work ."
+    }
+  },
+  "error": {
+    "unsupport_file": "Unsupported file format (xls only)",
+    "file_select": "Please select all sales data and promotional data files"
+  },
+  "null": "NO DATA"
+}
