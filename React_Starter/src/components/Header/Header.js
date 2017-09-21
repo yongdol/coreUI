@@ -79,15 +79,19 @@ class Header extends Component {
                             </DropdownToggle>
                             <DropdownMenu right className={this.state.dropdownOpen ? 'show' : ''}>
                                 <DropdownItem header tag="div" className="text-center"><strong>Settings</strong></DropdownItem>
-                                <DropdownItem><i className="fa fa-user"></i> Profile</DropdownItem>
-                                <DropdownItem><i className="fa fa-wrench"></i> Settings</DropdownItem>
-                                <DropdownItem><i className="fa fa-lock"></i> Logout</DropdownItem>
+                                <DropdownItem><i className="fa fa-user"></i>Profile</DropdownItem>
+                                <DropdownItem><i className="fa fa-wrench"></i>Settings</DropdownItem>
+                                <DropdownItem onClick={() => {
+                                    sessionStorage.clear();
+                                    location.href='/';
+                                    return;
+                                }}><i className="fa fa-lock"></i>Logout</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
                     </NavItem>
                     <NavItem>
-                        <img src="/img/flags/South Korea.png" onClick={() => changeLanguage('ko')} />
-                        <img src="/img/flags/USA.png" onClick={() => changeLanguage('en')} />
+                        <img src="/img/flags/country_korea.png" onClick={() => changeLanguage('ko')} />
+                        <img src="/img/flags/country_usa.png" onClick={() => changeLanguage('en')} />
                     </NavItem>
                 </Nav>
             </header>
@@ -105,14 +109,14 @@ class Header extends Component {
                 </Nav>
                 <Nav className="ml-auto" navbar>
                     <NavItem className="px-3">
-                        <NavLink href="#/cxo/login">LogIn</NavLink>
+                        <NavLink href="#/cxo/login"><i className="fa fa-fw fa-sign-in"/>LogIn</NavLink>
                     </NavItem>
                     <NavItem className="px-3">
-                        <NavLink href="#/cxo/register">Register</NavLink>
+                        <NavLink href="#/cxo/register"><i className="fa fa-fw fa-user"/>SignUp</NavLink>
                     </NavItem>
                     <NavItem className="d-md-down-none">
-                        <img src="/img/flags/South Korea.png" onClick={() => changeLanguage('ko')} />
-                        <img src="/img/flags/USA.png" onClick={() => changeLanguage('en')} />
+                        <img src="/img/flags/country_korea.png" onClick={() => changeLanguage('ko')} />
+                        <img src="/img/flags/country_usa.png" onClick={() => changeLanguage('en')} />
                     </NavItem>
                 </Nav>
             </header>
