@@ -20,8 +20,8 @@ class Full extends Component {
             <Breadcrumb />
             <Container fluid>
               <Switch>
-                <Route path="/dashboard" name="Dashboard" component={Dashboard}/>
-                <Redirect from="/" to="/dashboard"/>
+                <Route path="/cxo" name="Dashboard" component={Dashboard}/>
+                <Redirect from="/" to="/cxo"/>
               </Switch>
             </Container>
           </main>
