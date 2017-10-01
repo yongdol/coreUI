@@ -88,6 +88,8 @@ class Register extends Component {
                                         document.getElementById('password2').value)
                                     } block>Create Account</Button>
                                 </CardBlock>
+                                <CardFooter className="p-4">
+                                </CardFooter>
                             </Card>
                         </Col>
                     </Row>

@@ -6,8 +6,6 @@ import {
 import axios from "axios";
 import BACKEND_URL from "../../../../public/utils/config";
 
-
-
 class Login extends Component {
 
     constructor(props) {
