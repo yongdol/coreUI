@@ -50,7 +50,8 @@
     "reactstrap": "^4.8.0",
     "simple-line-icons": "^2.4.1",
     "toastr": "latest",
-    "classnames": "latest"
+    "classnames": "latest",
+    "react-router": "latest"
   },
   "scripts": {
     "dev": "webpack -d --progress --watch --profile --json > compilation-stats.json --env.dev",

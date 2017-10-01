@@ -58,19 +58,15 @@ class Header extends Component {
         const { t, i18n } = this.props;
         const changeLanguage = (lng) => {
             i18n.changeLanguage(lng);
+            window.location.reload()
         };
 
 
         const MemberHeader =  (
             <header className="app-header navbar">
                 <NavbarToggler className="d-lg-none" onClick={this.mobileSidebarToggle}>&#9776;</NavbarToggler>
-                <NavbarBrand href="#"></NavbarBrand>
+                <NavbarBrand href="/#/cxo"></NavbarBrand>
                 <NavbarToggler className="d-md-down-none" onClick={this.sidebarToggle}>&#9776;</NavbarToggler>
-                <Nav className="d-md-down-none" navbar>
-                    <NavItem className="px-3">
-                        <NavLink href="#">Dashboard</NavLink>
-                    </NavItem>
-                </Nav>
                 <Nav className="ml-auto" navbar>
                     <NavItem>
                         <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
@@ -89,8 +85,8 @@ class Header extends Component {
                             </DropdownMenu>
                         </Dropdown>
                     </NavItem>
-                    <NavItem>
-                        <img src="/img/flags/country_korea.png" onClick={() => changeLanguage('ko')} />
+                    <NavItem className="d-md-down-none">
+                        <img src="/img/flags/country_korea.png" onClick={() => changeLanguage('kr')} />
                         <img src="/img/flags/country_usa.png" onClick={() => changeLanguage('en')} />
                     </NavItem>
                 </Nav>
@@ -100,13 +96,8 @@ class Header extends Component {
         const GuestHeader = (
             <header className="app-header navbar">
                 <NavbarToggler className="d-lg-none" onClick={this.mobileSidebarToggle}>&#9776;</NavbarToggler>
-                <NavbarBrand href="#"></NavbarBrand>
+                <NavbarBrand href="/#/cxo"></NavbarBrand>
                 <NavbarToggler className="d-md-down-none" onClick={this.sidebarToggle}>&#9776;</NavbarToggler>
-                <Nav className="d-md-down-none" navbar>
-                    <NavItem className="px-3">
-                        <NavLink href="#">Home</NavLink>
-                    </NavItem>
-                </Nav>
                 <Nav className="ml-auto" navbar>
                     <NavItem className="px-3">
                         <NavLink href="#/cxo/login"><i className="fa fa-fw fa-sign-in"/>LogIn</NavLink>
@@ -115,7 +106,7 @@ class Header extends Component {
                         <NavLink href="#/cxo/register"><i className="fa fa-fw fa-user"/>SignUp</NavLink>
                     </NavItem>
                     <NavItem className="d-md-down-none">
-                        <img src="/img/flags/country_korea.png" onClick={() => changeLanguage('ko')} />
+                        <img src="/img/flags/country_korea.png" onClick={() => changeLanguage('kr')} />
                         <img src="/img/flags/country_usa.png" onClick={() => changeLanguage('en')} />
                     </NavItem>
                 </Nav>
@@ -126,4 +117,3 @@ class Header extends Component {
 }
 
 export default translate('translations')(Header);
-// export default Header;

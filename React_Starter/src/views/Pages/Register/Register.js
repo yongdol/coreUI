@@ -24,7 +24,7 @@ class Register extends Component {
         return axios.post(BACKEND_URL + "/signup", jsonData).then((res) => {
             if (res.data.e_msg.status === 200) {
                 sessionStorage.setItem('email', email);
-                sessionStorage.setItem('access_token', res.access_token);
+                sessionStorage.setItem('access_token', res.data.access_token);
                 this.props.history.push("/dashboard")
             } else {
                 const result = res.data.e_msg.message;

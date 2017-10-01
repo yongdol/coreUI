@@ -82,7 +82,7 @@ class Sidebar extends Component {
 
     // nav list
     const navList = (items) => {
-      return items.map( (item, index) => navLink(item, index) );
+      return items.map((item, index) => navLink(item, index) );
     };
 
     // sidebar-nav root

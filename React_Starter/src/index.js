@@ -23,6 +23,8 @@ import Login from './views/Pages/Login/'
 import Register from './views/Pages/Register/'
 import Page404 from "./views/Pages/Page404/Page404";
 import Page500 from "./views/Pages/Page500/Page500";
+import Analysis from "./components/Analysis/Analysis";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 
 
@@ -36,7 +38,8 @@ ReactDOM.render((
                 <Route exact path="/cxo/register" name="Register Page" component={Register}/>
                 <Route exact path="/404" name="Page 404" component={Page404}/>
                 <Route exact path="/500" name="Page 500" component={Page500}/>
-                <Route path="/" name="Home" component={Full}/>
+                <Route path="/cxo" name="Home" component={Full}/>
+                <Route path="/cxo/analysis/:job_id" name="Analysis" component={Analysis}/>
             </Switch>
         </HashRouter>
     </I18nextProvider>

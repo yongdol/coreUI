@@ -1,13 +1,14 @@
 export default {
-  items: [
-    {
-      name: 'Dashboard',
-      url: '/dashboard',
-      icon: 'icon-speedometer',
-      badge: {
-        variant: 'info',
-        text: 'NEW'
-      }
-    }
-  ]
+    items: [
+        {
+            name: 'Dashboard',
+            url: '/cxo/dashboard',
+            icon: 'icon-speedometer',
+        },
+        {
+            name: 'Analysis',
+            url: '/cxo/analysis',
+            icon: 'icon-chart',
+        }
+    ]
 };
