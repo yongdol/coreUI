@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Row} from "reactstrap";
 import axios from "axios";
-import BACKEND_URL from "../../../public/utils/config";
+import BACKEND_URL from "../../utils/config";
 import SummarySampleRender from "./SummarySampleRender/SummarySampleRender";
 import SummaryRender from "./SummaryRender/SummaryRender";
 import {translate} from "react-i18next";
@@ -40,8 +40,7 @@ class Dashboard extends Component {
                 this.setState({render_error: result});
             }
         }).catch((res) => {
-            let result = res.response.data.e_msg.message;
-            this.setState({render_error: result});
+            console.log('res', res);
         });
     }
 
@@ -93,9 +92,9 @@ class Dashboard extends Component {
                                 const sum_desc = json_data.summary_desc;
                                 const job_id = JSON.parse(item.id);
                                 if (job_id === 1 || job_id === 2 || job_id ===3 || job_id === 4 || job_id === 5) {
-                                    return <SummarySampleRender graph={bar} desc={sum_desc} job_id={job_id} key={i}/>
+                                    return <SummarySampleRender graph_type="bar" graph_data={bar} desc={sum_desc} job_id={job_id} key={i}/>
                                 } else {
-                                    return <SummaryRender graph={bar} desc={sum_desc} job_id={job_id} key={i}/>
+                                    return <SummaryRender graph_type="pie" graph_data={pie} desc={sum_desc} job_id={job_id} key={i}/>
                                 }
                             })
                         }

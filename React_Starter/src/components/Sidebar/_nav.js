@@ -5,10 +5,5 @@ export default {
             url: '/cxo/dashboard',
             icon: 'icon-speedometer',
         },
-        {
-            name: 'Analysis',
-            url: '/cxo/analysis',
-            icon: 'icon-chart',
-        }
     ]
 };

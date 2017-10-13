@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
-import BACKEND_URL from "../../../public/utils/config";
+import BACKEND_URL from "../../utils/config";
 import axios from 'axios';
+import Contents from "./Contents";
+import {Badge, Button, Card, CardBlock, CardHeader, Col, Row} from "reactstrap";
+import ToMyDataButton from "./ToMyDataButton";
 import {translate} from "react-i18next";
 
 
@@ -15,7 +18,7 @@ class Analysis extends Component {
     }
 
     componentDidMount() {
-        this.getDetailReport(this.props.job_id)
+        this.getDetailReport(this.props.match.params.job_id)
     }
 
 
@@ -27,83 +30,81 @@ class Analysis extends Component {
                 "Authorization": token
             },
             params: {
-                job_id: job_id? job_id : this.props.job_id,
+                job_id: job_id? job_id : this.props.match.params.job_id,
                 locale: locale
             }
         }).then((res) => {
-            this.setState({data: res.data.data})
+            this.setState({data: res.data.data.slice(0, 10)})
         }).catch((res) => {
-            let result = res.response.data.e_msg.message;
-            this.setState({render_error: result});
-            console.log('error', this.state.render_error );
-            // this.props.history.push("/dashboard")
-        });
-    }
-
-    checkScheme(data) {
-        let append = [];
-        const scheme = data.map((item, i)  => {
-            if (item.layout_column_append){
-                append.push(item.layout_column_append)
-            } else {
-                append = [];
-                append.push(item.layout_column_append);
-            }
-            return append;
+            console.log('error', res );
+            // let result = res.response.data.e_msg.message;
+            // this.setState({render_error: result});
         });
     }
 
     render() {
         if (this.state.data) {
             let data = eval('(' + this.state.data[0]['big_json'] + ')');
-            // console.log('eval data', data);
-            const scheme = this.checkScheme(data.body);
-            // console.log('shceme', scheme );
+            let append = [];
+            const scheme = data.body.map((item, i)  => {
+                if (item.layout_column_append){
+                    append.push(item.layout_column_append)
+                } else {
+                    append = [];
+                    append.push(item.layout_column_append);
+                }
+                return append;
+            });
+            // console.log('scheme', scheme );
             const sampleAnalysis = (
                 <div>
-                    <div className="row">
-                        <div className="col-lg-8 col-lg-offset-2">
-                            <h1 className="page-header"><i className="fa fa-fw fa-bar-chart"></i>{data.title}</h1>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-lg-offset-2 col-lg-2 sample-data-tag">
-                            <i className="fa fa-fw fa-tag"/>SampleData
-                        </div>
-                    </div>
-                    <div className="report-contents">
-                        <div></div>
-                        <h1></h1>
-                        <div className="col-lg-offset-1 col-lg-10">
-                            {data.body.map((obj, i) => (this.printmap(obj, i, scheme)))};
-                        </div>
-                        <div className="col-lg-offset-1 col-lg-10">
-                            <ToMyDataButton />
-                        </div>
-                    </div>
+                    <Card className="card-accent-danger">
+                        <CardHeader>
+                            {data.title}
+                            <Badge color="danger" className="float-right">Sample</Badge>
+                        </CardHeader>
+                        <CardBlock className="card-body">
+                            <Row>
+                            {data.body.map((obj, i) =>
+                                <Contents
+                                    obj={obj}
+                                    scheme={scheme}
+                                    ind={i}
+                                    job_id={this.props.match.params.job_id}
+                                />
+                            )}
+                            </Row>
+                        </CardBlock>
+                        <ToMyDataButton />
+                    </Card>
                 </div>
             );
 
             const Analysis = (
                 <div>
-                    <div className="row">
-                        <div className="col-lg-8 col-lg-offset-2">
-                            <h1 className="page-header"><i className="fa fa-fw fa-bar-chart"></i>{data.title}</h1>
-                        </div>
-                    </div>
-                    <div className="report-contents">
-                        <div></div>
-                        <h1></h1>
-                        <div className="col-lg-offset-1 col-lg-10">
-                            {data.body.map((obj, i) => (this.printmap(obj, i, scheme)))}
-                        </div>
-                        <div className="col-lg-offset-1 col-lg-10">
-                            <ToMyDataButton />
-                        </div>
-                    </div>
+                    <Card className="card-accent-success">
+                        <CardHeader>
+                            {data.title}
+                        </CardHeader>
+                        <CardBlock className="card-body">
+                            <Row>
+                                {data.body.map((obj, i) =>
+                                    <Contents
+                                        obj={obj}
+                                        scheme={scheme}
+                                        ind={i}
+                                        job_id={this.props.match.params.job_id}
+                                    />
+                                )}
+                            </Row>
+                        </CardBlock>
+                        <ToMyDataButton />
+                    </Card>
                 </div>
             );
-            if (this.props.job_id === "1" || this.props.job_id === "2" || this.props.job_id === "3" || this.props.job_id === "4" || this.props.job_id === "5"){
+            if (this.props.match.params.job_id === "1" || this.props.match.params.job_id === "2" ||
+                this.props.match.params.job_id === "3" || this.props.match.params.job_id === "4" ||
+                this.props.match.params.job_id === "5"){
                 return sampleAnalysis
             } else {
                 return Analysis

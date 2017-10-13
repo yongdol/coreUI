@@ -1,9 +1,44 @@
 import React, {Component} from 'react';
-import {Bar} from "react-chartjs-2";
+import {Bar, Pie} from "react-chartjs-2";
 import {Badge, Card, CardBlock, CardHeader, Col, Row} from "reactstrap";
 import {Link} from "react-router-dom";
 
 class SummaryRender extends Component {
+
+    summaryGraph(graphType) {
+        switch (graphType) {
+            case "bar" :
+                return (
+                    <Bar data={this.props.graph_data}
+                         options={{
+                             maintainAspectRatio: false,
+                             animation: {
+                                 duration : 2000
+                             }
+                         }}
+                    />
+                );
+
+            case "pie" :
+                return (
+                    <Pie data={this.props.graph_data}
+                         options={{
+                             maintainAspectRatio: false,
+                             animation: {
+                                 duration : 2000
+                             }
+                         }}
+                    />
+                );
+            default :
+                return (
+                    <div>
+                        Error!
+                    </div>
+                )
+        }
+    }
+
     render() {
         const style = {
             text_center : {
@@ -25,7 +60,7 @@ class SummaryRender extends Component {
         };
 
         return (
-            <Col lg="6" xs="12">
+            <Col lg="6" sm="12" xs="12">
                 <Link to={"/cxo/analysis/" + this.props.job_id} style={style.link}>
                     <Card className="card-accent-danger">
                         <CardHeader>
@@ -37,14 +72,7 @@ class SummaryRender extends Component {
                             <CardBlock className="card-body col-6">
                                 <div>
                                     <div className="chart-wrapper">
-                                        <Bar data={this.props.graph}
-                                             options={{
-                                                 maintainAspectRatio: false,
-                                                 animation: {
-                                                     duration : 2000
-                                                 }
-                                             }}
-                                        />
+                                        {this.summaryGraph(this.props.graph_type)}
                                     </div>
                                 </div>
                             </CardBlock>

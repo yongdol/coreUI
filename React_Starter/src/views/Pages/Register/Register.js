@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {Container, Row, Col, Card, CardBlock, CardFooter, Button, Input, InputGroup, InputGroupAddon} from "reactstrap";
-import BACKEND_URL from "../../../../public/utils/config";
+import BACKEND_URL from "../../../utils/config";
 import axios from "axios"
 
 

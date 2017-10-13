@@ -4,7 +4,7 @@ import {
     Modal, ModalHeader, ModalBody, ModalFooter
 } from "reactstrap";
 import axios from "axios";
-import BACKEND_URL from "../../../../public/utils/config";
+import BACKEND_URL from "../../../utils/config";
 
 class Login extends Component {
 
