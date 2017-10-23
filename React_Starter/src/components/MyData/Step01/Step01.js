@@ -4,7 +4,7 @@ import FileDownload from 'react-file-download'
 import BACKEND_URL from "../../../utils/config";
 import {translate} from "react-i18next";
 import './style.css';
-import {Button, Card, CardBlock, CardHeader, Col, Row, Table} from "reactstrap";
+import {Button, Card, CardBlock, CardHeader, Col, FormText, Input, Row, Table} from "reactstrap";
 
 
 class Step01 extends Component {
@@ -50,6 +50,8 @@ class Step01 extends Component {
 
     uploadFile(e, i18n, t) {
         const token = sessionStorage.getItem("access_token");
+        const report_name = document.getElementById('text-input').value;
+
         const formData = new FormData();
 
         const file_1 = document.getElementById("file_1").files;
@@ -70,6 +72,7 @@ class Step01 extends Component {
             return
         } else {
             formData.append("locale", i18n.language);
+            formData.append("report_name", report_name);
             return axios.post(BACKEND_URL + "/file_upload", formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
@@ -140,6 +143,12 @@ class Step01 extends Component {
                                     </thead>
                                     <tbody>
                                     <tr>
+                                        <td>{t('report.report_name')}</td>
+                                        <td>
+                                            <Input type="text" id="text-input" name="text-input" placeholder=""/>
+                                        </td>
+                                    </tr>
+                                    <tr>
                                         <td>{t('title.sales_data')}</td>
                                         <td>
                                             <form ref="uploadForm" className="account-file-upload">
@@ -181,12 +190,12 @@ class Step01 extends Component {
                                 </Table>
                                 <Row>
                                     <Col xs="6">
-                                        <Button className="step1-title-color" size="sm" block onClick={history.goBack}>
+                                        <Button className="border-round step1-title-color float-right" size="lg" onClick={history.goBack}>
                                             {t('btn.back')}
                                         </Button>
                                     </Col>
                                     <Col xs="6">
-                                        <Button className="step1-title-color" size="sm" block onClick={(e) => this.uploadFile(e, i18n, t)}>
+                                        <Button className="border-round step1-title-color" size="lg" onClick={(e) => this.uploadFile(e, i18n, t)}>
                                             {t('btn.save')}
                                         </Button>
                                         <p className="error-color">

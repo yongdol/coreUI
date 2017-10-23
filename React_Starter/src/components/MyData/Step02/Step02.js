@@ -25,8 +25,8 @@ class Step02 extends Component {
 
     render() {
         const { t, history, location } = this.props;
-        console.log('location', location.state.res);
-        console.log('location', location.state.file1);
+        // console.log('location', location.state.res);
+        // console.log('location', location.state.file1);
         if (sessionStorage.getItem('access_token')) {
             return (
                 <div className="contents animated fadeIn">
@@ -54,7 +54,7 @@ class Step02 extends Component {
                                         <td>
                                             {
                                                 location.state.file1.map((item, key) => {
-                                                        console.log('item', item.name);
+                                                        // console.log('item', item.name);
                                                         return (
                                                             <p>
                                                                 {item.name}
@@ -72,7 +72,7 @@ class Step02 extends Component {
                                         <td>
                                             {
                                                 location.state.file2.map((item, key) => {
-                                                    console.log('item', item.name);
+                                                    // console.log('item', item.name);
                                                     return (
                                                         <p>
                                                             {item.name}
@@ -90,17 +90,17 @@ class Step02 extends Component {
                             </CardBlock>
                             <Row>
                                 <Col xs="4">
-                                    <Button className="step2-title-color" size="sm" block onClick={history.goBack}>
+                                    <Button className="border-round step2-title-color float-right margin-bottom" size="lg" onClick={history.goBack}>
                                         {t('btn.back')}
                                     </Button>
                                 </Col>
-                                <Col xs="4">
-                                    <Button className="step2-title-color" size="sm" block onClick={this.goHome.bind(this)}>
+                                <Col xs="4" className="text-center">
+                                    <Button className="border-round step2-title-color margin-bottom" size="lg" onClick={this.goHome.bind(this)}>
                                         {t('btn.home')}
                                     </Button>
                                 </Col>
                                 <Col xs="4">
-                                    <Button className="step2-title-color" size="sm" block onClick={this.goNext.bind(this)}>
+                                    <Button className="border-round step2-title-color float-left margin-bottom" size="lg" onClick={this.goNext.bind(this)}>
                                         {t('btn.next')}
                                     </Button>
                                 </Col>

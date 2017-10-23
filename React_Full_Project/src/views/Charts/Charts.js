@@ -4,7 +4,7 @@ import {CardColumns, Card, CardHeader, CardBlock} from "reactstrap";
 
 const line = {
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-  datasets: [
+    datasets: [
     {
       label: 'My First dataset',
       fill: false,

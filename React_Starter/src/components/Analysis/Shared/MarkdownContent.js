@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Col} from "reactstrap";
 import Markdown from 'react-remarkable'
+import marked from "marked";
 
 
 class MarkdownContent extends Component {
@@ -22,8 +23,6 @@ class MarkdownContent extends Component {
                 </Col>
             )
         }
-
-
     }
 }
 

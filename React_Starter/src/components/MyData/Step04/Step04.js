@@ -27,12 +27,12 @@ class Step04 extends Component {
                         </CardBlock>
                         <Row>
                             <Col xs="6">
-                                <Button className="step4-title-color" size="sm" block onClick={history.goBack}>
+                                <Button outline className="step4-title-color" size="sm" block onClick={history.goBack}>
                                     {t('btn.back')}
                                 </Button>
                             </Col>
                             <Col xs="6">
-                                <Button className="step4-title-color" size="sm" block onClick={this.goHome.bind(this)}>
+                                <Button outline className="step4-title-color" size="sm" block onClick={this.goHome.bind(this)}>
                                     {t('btn.home')}
                                 </Button>
                             </Col>

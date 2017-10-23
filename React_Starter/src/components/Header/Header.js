@@ -17,7 +17,6 @@ class Header extends Component {
 
     constructor(props) {
         super(props);
-
         this.toggle = this.toggle.bind(this);
         this.state = {
             dropdownOpen: false
@@ -53,11 +52,14 @@ class Header extends Component {
     render() {
         const isLoggedIn = (sessionStorage.getItem('access_token') ? true : false);
         const email = sessionStorage.getItem('email');
-        const { t, i18n } = this.props;
-        const url = window.location.href;
+        const { t, i18n, history } = this.props;
         const changeLanguage = (lng) => {
             i18n.changeLanguage(lng);
-            if (url.includes("step") === false) {
+            const url = window.location;
+            // console.log('url', url.href.includes("step01"));
+            if (url.href.includes("step01") || url.href.includes("step02")) {
+                console.log('pass');
+            } else {
                 window.location.reload()
             }
         };
@@ -65,7 +67,7 @@ class Header extends Component {
         const MemberHeader =  (
             <header className="app-header navbar">
                 <NavbarToggler className="d-lg-none" onClick={this.mobileSidebarToggle}>&#9776;</NavbarToggler>
-                <NavbarBrand href="/#/cxo"></NavbarBrand>
+                <NavbarBrand href="/#/cxo/sampledashboard"></NavbarBrand>
                 <NavbarToggler className="d-md-down-none" onClick={this.sidebarToggle}>&#9776;</NavbarToggler>
                 <Nav className="ml-auto" navbar>
                     <NavItem>
@@ -75,8 +77,11 @@ class Header extends Component {
                             </DropdownToggle>
                             <DropdownMenu right className={this.state.dropdownOpen ? 'show' : ''}>
                                 <DropdownItem header tag="div" className="text-center"><strong>{t('member.setting')}</strong></DropdownItem>
-                                <DropdownItem><i className="fa fa-user"></i>{t('member.profile')}</DropdownItem>
                                 <DropdownItem><i className="fa fa-wrench"></i>{t('member.setting')}</DropdownItem>
+                                <DropdownItem>
+                                    <NavLink href="#/cxo/mypage">
+                                        <i className="fa fa-user"></i>{t('member.mypage')}</NavLink>
+                                </DropdownItem>
                                 <DropdownItem onClick={() => {
                                     sessionStorage.clear();
                                     location.href='/';
@@ -96,7 +101,7 @@ class Header extends Component {
         const GuestHeader = (
                 <header className="app-header navbar">
                     <NavbarToggler className="d-lg-none" onClick={this.mobileSidebarToggle}>&#9776;</NavbarToggler>
-                    <NavbarBrand href="/#/cxo"></NavbarBrand>
+                    <NavbarBrand href="/#/cxo/sampledashboard"></NavbarBrand>
                     <NavbarToggler className="d-md-down-none" onClick={this.sidebarToggle}>&#9776;</NavbarToggler>
                     <Nav className="ml-auto" navbar>
                         <NavItem className="px-3">

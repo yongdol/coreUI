@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
+
+.helloUser{
+    width:200px;
+    height:200px;
+    background-image: url('../../../public/img/fileupload/img_hellouser.png');
+    background-repeat:no-repeat;
+    background-size:cover;
+    margin:0 auto;
+    margin-top:10px;
+}
+.helloUser-align{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    text-align:center;
+}
+.mypage-hello{
+    font-family: 'Pacifico', cursive;
+    color:#000000;
+    font-size:30px;
+    line-height:40px;
+}
+.mypage-userid{
+    font-family: 'Patrick Hand', cursive;
+    color:#000000;
+    font-size:15px;
+    line-height:20px
+}

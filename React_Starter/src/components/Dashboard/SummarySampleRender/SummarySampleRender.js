@@ -1,44 +1,18 @@
 import React, {Component} from 'react';
-import {Bar, Pie} from "react-chartjs-2";
-import {Badge, Card, CardBlock, CardHeader, Col, Row} from "reactstrap";
+import {Card, CardBlock, Col, Row} from "reactstrap";
 import {Link} from "react-router-dom";
+import RenderModal from "../Shared/RenderModal";
+import RenderSummaryGraph from "../Shared/RenderSummaryGraph";
 
 class SummaryRender extends Component {
-
-    summaryGraph(graphType) {
-        switch (graphType) {
-            case "bar" :
-                return (
-                    <Bar data={this.props.graph_data}
-                         options={{
-                             maintainAspectRatio: false,
-                             animation: {
-                                 duration : 2000
-                             }
-                         }}
-                    />
-                );
-
-            case "pie" :
-                return (
-                    <Pie data={this.props.graph_data}
-                         options={{
-                             maintainAspectRatio: false,
-                             animation: {
-                                 duration : 2000
-                             }
-                         }}
-                    />
-                );
-            default :
-                return (
-                    <div>
-                        Error!
-                    </div>
-                )
-        }
+    constructor(props) {
+        super(props);
+        this.goDetail = this.goDetail.bind(this);
     }
 
+    goDetail(job_id, h) {
+        h.push("cxo/analysis/" + job_id)
+    }
     render() {
         const style = {
             text_center : {
@@ -58,48 +32,102 @@ class SummaryRender extends Component {
 
             }
         };
-
-        return (
-            <Col lg="6" sm="12" xs="12">
-                <Link to={"/cxo/analysis/" + this.props.job_id} style={style.link}>
+        // console.log('info', this.props.graph);
+        const {service_id, service_name, service_text, job_id, report_name, graph, info, history} = this.props;
+        if(graph === "null") {
+            return (
+                <Col lg="6" sm="12" xs="12">
                     <Card className="card-accent-danger">
-                        <CardHeader>
-                            <i className="fa fa-bar-chart"></i>
-                            알고리즘이름?설명?어떤분석인지?
-                            <Badge color="danger" className="float-right">Sample</Badge>
-                        </CardHeader>
+                        <RenderModal
+                            service_id={service_id}
+                            service_name={service_name}
+                            service_text={service_text}
+                            report_name={report_name}
+                            history={history}
+                        />
+                        <Row>
+                            <CardBlock className="col-12">
+                                <Link to={"/cxo/analysis/" + job_id} style={style.link}>
+                                    {
+                                        info.map((item, i) => {
+                                            if (item.keyname === "") {
+                                                return (
+                                                    <div key={i}>
+                                                        <p>{item.value}</p>
+                                                    </div>
+                                                )
+                                            } else {
+                                                return (
+                                                    <div key={i}>
+                                                        <p>{item.keyname} : {item.value}</p>
+                                                    </div>
+                                                )
+                                            }
+                                        })
+                                    }
+                                </Link>
+                            </CardBlock>
+                        </Row>
+                    </Card>
+                </Col>
+            );
+        } else {
+            return (
+                <Col lg="6" sm="12" xs="12">
+                    <Card className="card-accent-danger">
+                        <RenderModal
+                            service_id={service_id}
+                            service_name={service_name}
+                            service_text={service_text}
+                            report_name={report_name}
+                            history={history}
+                        />
                         <Row>
                             <CardBlock className="card-body col-6">
                                 <div>
                                     <div className="chart-wrapper">
-                                        {this.summaryGraph(this.props.graph_type)}
+                                        {
+                                            graph.map((item, i) => {
+                                                return (
+                                                    <RenderSummaryGraph
+                                                        type={item.type}
+                                                        data={item.data}
+                                                        options={item.options}
+                                                        key={i}
+                                                    />
+                                                )
+                                            })
+                                        }
                                     </div>
                                 </div>
                             </CardBlock>
                             <CardBlock className="col-6">
-                                {
-                                    this.props.desc.map((item) => {
-                                        if (item.keyname === "") {
-                                            return (
-                                                <div>
-                                                    <p>{item.value}</p>
-                                                </div>
-                                            )
-                                        } else {
-                                            return (
-                                                <div>
-                                                    <p>{item.keyname} : {item.value}</p>
-                                                </div>
-                                            )
-                                        }
-                                    })
-                                }
+                                <Link to={"/cxo/analysis/" + job_id} style={style.link}>
+                                    {
+                                        info.map((item, i) => {
+                                            if (item.keyname === "") {
+                                                return (
+                                                    <div key={i}>
+                                                        <p>{item.value}</p>
+                                                    </div>
+                                                )
+                                            } else {
+                                                return (
+                                                    <div key={i}>
+                                                        <p>{item.keyname} : {item.value}</p>
+                                                    </div>
+                                                )
+                                            }
+                                        })
+                                    }
+                                </Link>
                             </CardBlock>
                         </Row>
                     </Card>
-                </Link>
-            </Col>
-        );
+                </Col>
+            )
+        }
+
     }
 }
 

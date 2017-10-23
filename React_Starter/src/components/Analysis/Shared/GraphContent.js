@@ -2,12 +2,13 @@ import React, {Component} from 'react';
 import {Col} from "reactstrap";
 import C3Chart from "react-c3js";
 import * as d3 from "d3-format";
-import style from './style.css';
+import style from '../style.css';
 
 class GraphContent extends Component {
     render() {
         const { obj, grid, i } = this.props;
         const title = obj.title;
+        // console.log('obj', obj);
         if (obj.tooltip) {
             if (obj.outline === "true") {
                 return (

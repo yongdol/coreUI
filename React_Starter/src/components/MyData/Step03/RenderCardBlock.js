@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
-import {CardBlock} from "reactstrap";
+import {Card, CardBlock, CardHeader} from "reactstrap";
 import {translate} from "react-i18next";
 import BACKEND_URL from "../../../utils/config";
 import axios from 'axios';
+import RenderBadge from "./RenderBadge";
 
 
 class RenderCardBlock extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            progress_id: null,
+            progress_id: '',
             job_id: this.props.job_id,
             status: this.props.status,
             start_time: this.props.start
@@ -51,21 +52,33 @@ class RenderCardBlock extends Component {
 
 
     render() {
-        const { t } = this.props;
+        const { t, job_id, status, start, service_name } = this.props;
         if (this.state.status === 'complete') {
             return (
-                <CardBlock>
-                    <p>{t('try_start_at')} : {this.state.start_time}</p>
-                    <p>{this.state.job_id}</p>
-                </CardBlock>
+                <Card>
+                    <CardHeader>
+                        {service_name}
+                        <RenderBadge stat={status}/>
+                    </CardHeader>
+                    <CardBlock>
+                        <p>{t('try_start_at')} : {start}</p>
+                        <p>{job_id}</p>
+                    </CardBlock>
+                </Card>
             )
         } else {
             return (
-                <CardBlock>
-                    <p>{this.state.job_id}</p>
-                    <p>{t('try_start_at')} : {this.state.start_time}</p>
-                    <p>{t('analysis_step')} : {this.state.progress_id}</p>
-                </CardBlock>
+                <Card>
+                    <CardHeader>
+                        {service_name}
+                        <RenderBadge stat={status}/>
+                    </CardHeader>
+                    <CardBlock>
+                        <p>{job_id}</p>
+                        <p>{t('try_start_at')} : {start}</p>
+                        <p>{t('analysis_step')} : {this.state.progress_id}</p>
+                    </CardBlock>
+                </Card>
             )
         }
     }

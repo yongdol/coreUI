@@ -3,9 +3,10 @@ import {Badge} from "reactstrap";
 import {translate} from "react-i18next";
 
 class RenderBadge extends Component {
+
     render() {
-        const { t , status} = this.props;
-        switch (status) {
+        const { t , stat} = this.props;
+        switch (stat) {
             case "waiting" :
                 return (
                     <Badge color="warning" className="float-right badge-text">
