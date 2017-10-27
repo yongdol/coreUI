@@ -30,10 +30,10 @@ const line = {
 };
 
 const bar = {
-  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+  labels: ['제주로 떠나자 유효 상승','너만을 위한 여행','우리는 VIP'],
   datasets: [
     {
-      label: 'My First dataset',
+      label: '연간 프로모션 분석',
       backgroundColor: 'rgba(255,99,132,0.2)',
       borderColor: 'rgba(255,99,132,1)',
       borderWidth: 1,
@@ -249,3 +249,5 @@ class Charts extends Component {
 }
 
 export default Charts;
+
+

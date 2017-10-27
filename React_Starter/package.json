@@ -65,8 +65,7 @@
     "react-transition-group": "^1.2.0",
     "reactstrap": "^4.8.0",
     "simple-line-icons": "^2.4.1",
-    "styled-components": "^2.2.1",
-    "toastr": "latest"
+    "styled-components": "^2.2.1"
   },
   "scripts": {
     "dev": "webpack -d --progress --watch --profile --json > compilation-stats.json --env.dev",

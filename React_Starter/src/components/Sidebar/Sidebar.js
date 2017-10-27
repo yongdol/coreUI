@@ -50,7 +50,11 @@ class Sidebar extends Component {
         };
 
         // nav list divider
-        const divider = (divider, key) => (<li key={key} className="divider"></li>);
+        const style = {
+            backgroundColor : 'white',
+            height: '2px'
+        };
+        const divider = (divider, key) => (<li key={key} className="divider" style={style}></li>);
 
         // nav item with nav link
         const navItem = (item, key) => {

@@ -27,7 +27,7 @@ import i18n from './utils/i18n';
 const history = createBrowserHistory();
 
 ReactDOM.render((
-    <I18nextProvider i18n={ i18n }>
+    <I18nextProvider i18n={i18n}>
         <HashRouter history={history}>
             <Switch>
                 <Route exact path="/cxo/login" name="Login Page" component={Login}/>

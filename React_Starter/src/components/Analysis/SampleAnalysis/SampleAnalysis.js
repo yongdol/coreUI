@@ -8,7 +8,7 @@ import {translate} from "react-i18next";
 class SampleAnalysis extends Component {
 
     render() {
-        const {data, scheme, job_id, history} = this.props;
+        const {data, scheme, job_id, history, service_id} = this.props;
         return (
             <Card className="card-accent-danger">
                 <CardHeader>
@@ -27,7 +27,7 @@ class SampleAnalysis extends Component {
                         )}
                     </Row>
                 </CardBlock>
-                <ToMyDataButton history={history}/>
+                <ToMyDataButton history={history} service_id={service_id}/>
             </Card>
         );
     }

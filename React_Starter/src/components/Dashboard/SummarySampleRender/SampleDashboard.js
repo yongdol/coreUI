@@ -48,7 +48,7 @@ class SampleDashboard extends Component {
                 margin : 'auto',
                 paddingTop: '200px'
             }
-        }
+        };
         return (
             <div className="animated fadeIn">
                 <Row>
@@ -65,7 +65,7 @@ class SampleDashboard extends Component {
                             const job_id = item.id;
                             const service_id = item.service_id;
                             const service_name = item.service_name;
-                            const service_text = item.dtext;
+                            const service_brief = item.service_brief;
                             const report_name = item.report_name;
                             const json_data = JSON.parse(item.sum_json);
                             const sum_info = json_data.summary_info;
@@ -75,7 +75,7 @@ class SampleDashboard extends Component {
                                 job_id={job_id}
                                 service_id={service_id}
                                 service_name={service_name}
-                                service_text={service_text}
+                                service_brief={service_brief}
                                 report_name={report_name}
                                 info={sum_info}
                                 graph={sum_graph}

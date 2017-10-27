@@ -16,7 +16,7 @@ class Step02 extends Component {
     }
 
     goNext() {
-        this.props.history.push("/cxo/step03")
+        this.props.history.push("/report/new/step03")
     }
 
     goHome() {

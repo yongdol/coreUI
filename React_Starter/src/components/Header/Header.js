@@ -79,7 +79,7 @@ class Header extends Component {
                                 <DropdownItem header tag="div" className="text-center"><strong>{t('member.setting')}</strong></DropdownItem>
                                 <DropdownItem><i className="fa fa-wrench"></i>{t('member.setting')}</DropdownItem>
                                 <DropdownItem>
-                                    <NavLink href="#/cxo/mypage">
+                                    <NavLink href="#/setting/mypage">
                                         <i className="fa fa-user"></i>{t('member.mypage')}</NavLink>
                                 </DropdownItem>
                                 <DropdownItem onClick={() => {
