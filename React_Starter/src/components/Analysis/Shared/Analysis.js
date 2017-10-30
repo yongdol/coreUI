@@ -16,7 +16,6 @@ class Analysis extends Component {
       data: null,
       render_error: "",
     };
-    this.analysisRender = this.analysisRender.bind(this)
   }
 
   componentDidMount() {
@@ -32,13 +31,14 @@ class Analysis extends Component {
         "Authorization": token
       },
       params: {
-        job_id: job_id ? job_id : this.props.match.params.job_id,
+        // job_id: job_id ? job_id : this.props.match.params.job_id,
+        job_id: job_id,
         locale: locale
       }
     }).then((res) => {
       this.setState({data: res.data});
-    }).catch((res) => {
-      console.log('error', res);
+    }).catch((error) => {
+      console.log('error', error);
     });
   }
 
@@ -55,29 +55,15 @@ class Analysis extends Component {
       }
       return append;
     });
-    if (match.params.job_id === "1" || match.params.job_id === "2" ||
-      match.params.job_id === "3" || match.params.job_id === "4" ||
-      match.params.job_id === "5") {
-      return (
-        <SampleAnalysis
-          data={eval_data}
-          scheme={scheme}
-          job_id={match.params.job_id}
-          history={history}
-          service_id={service_id}
-        />
-      )
-    } else {
-      return (
-        <MyAnalysis
-          data={eval_data}
-          scheme={scheme}
-          job_id={match.params.job_id}
-          history={history}
-          service_id={service_id}
-        />
-      )
-    }
+    return (
+      <MyAnalysis
+        data={eval_data}
+        scheme={scheme}
+        job_id={match.params.job_id}
+        history={history}
+        service_id={service_id}
+      />
+    )
   }
 
 
