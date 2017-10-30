@@ -19,15 +19,15 @@ class RenderSummaryGraph extends Component {
         );
       case "doughnut":
         return (
-          <Doughnut data={data}/>
+          <Doughnut data={data} options={options}/>
         );
       case "radar":
         return(
-          <Radar data={data}/>
+          <Radar data={data} options={options}/>
         );
       case "polar":
         return(
-          <Polar data={data}/>
+          <Polar data={data} options={options}/>
         );
 
       default :
