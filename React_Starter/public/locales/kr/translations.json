@@ -1,0 +1,65 @@
+{
+  "member": {
+    "login": "로그인",
+    "logout": "로그아웃",
+    "signup": "회원가입",
+    "rumember": "혹시 회원이 아니신가요?",
+    "setting": "설정",
+    "profile": "프로필",
+    "mypage": "마이페이지"
+  },
+  "btn": {
+    "analysis": "분석결과",
+    "waiting": "분석대기",
+    "detail": "자세히 보기",
+    "mydata": "내 데이터 적용",
+    "close": "닫기",
+    "sample_download": "SAMPLE 파일 다운로드",
+    "sample_data": "SAPLE 데이터 보기",
+    "backtostep01": "뒤로가기(Step01)",
+    "back": "뒤로가기",
+    "save": "저장하기",
+    "home": "홈으로 가기",
+    "next": "다음단계"
+  },
+  "title": {
+    "summary": "분석요약",
+    "input_data": "데이터 입력",
+    "sales_data": "매출 데이터",
+    "promo_data": "프로모션 데이터",
+    "waiting": "분석요청대기목록",
+    "need_file": "필요데이터",
+    "file_name": "파일선택 및 파일이름",
+    "total_min_time": "분석시간 : 약",
+    "minute": "분"
+  },
+  "desc": {
+    "mydata": {
+      "desc1": "엑셀파일로 데이터를 업로드 하면, 그에 맞는 분석결과 데모가 생성됩니다. 현재 분석 대기 중",
+      "desc2": "가능한 다운받은 SAMPLE 파일을 수정해서 업로드 하시기 바랍니다. SAMPLE 파일에 기록된 지시사항을 숙지하시고 반드시 따르셔야 합니다.그렇지 않으면 분석 알고리즘 작동을 보장할 수 없습니다."
+    }
+  },
+  "error": {
+    "unsupport_file": "지원하지 않는 파일 형식입니다.(xls만 가능)",
+    "file_select": "매출데이터, 프로모션데이터 2개 파일을 모두 선택해 주세요",
+    "service_choice": "서비스를 선택하세요!"
+  },
+  "status": {
+    "waiting": "대기 중",
+    "working": "분석 중",
+    "error": "오류",
+    "complete": "완료"
+  },
+  "report": {
+    "job_id": "보고서 ID",
+    "report_name": "보고서 이름",
+    "service_name": "분석알고리즘 이름",
+    "start_time": "분석시작시간",
+    "end_time": "분석종료시간",
+    "status": "상태"
+  },
+  "try_start_at": "분석요청시간",
+  "analysis_step": "분석진행상태",
+  "null": "NO DATA",
+  "hello": "안녕하세요"
+}

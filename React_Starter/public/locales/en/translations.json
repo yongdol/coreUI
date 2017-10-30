@@ -1,0 +1,65 @@
+{
+  "member": {
+    "login": "LOGIN",
+    "logout": "LOGOUT",
+    "signup": "SIGNUP",
+    "rumember": "Don't Have An Account?",
+    "setting": "SETTING",
+    "profile": "PROFILE",
+    "mypage": "MY PAGE"
+  },
+  "btn" : {
+    "analysis": "ANALYSIS",
+    "waiting": "ANALYSIS QUEUE",
+    "detail": "DETAIL",
+    "mydata": "DEMO PLAY",
+    "close": "CLOSE",
+    "sample_download": "SAMPLE FILE DOWNLOAD",
+    "sample_data": "SAMPLE DATA",
+    "backtostep01": "BACK(Step01)",
+    "back": "BACK",
+    "save": "SAVE",
+    "home": "MAIN PAGE",
+    "next": "NEXT STEP"
+  },
+  "title": {
+    "summary": "SUMMARY",
+    "input_data": "INPUT DATA",
+    "sales_data": "SALES DATA",
+    "promo_data": "PROMOTION DATA",
+    "waiting": "REQUEST QUEUE",
+    "need_file": "FILE",
+    "file_name": "SELECT FILE",
+    "total_min_time": "Analysis time : about",
+    "minute": "minute"
+  },
+  "desc": {
+    "mydata": {
+      "desc1": "When you upload the data to an Excel file, a corresponding analysis demo is created. Currently pending analysis ",
+      "desc2": "Please modify the downloaded SAMPLE FILE and upload it. Be sure to read and follow the instructions in the SAMPLE FILE.Otherwise, the analysis algorithm can not be guaranteed to work ."
+    }
+  },
+  "error": {
+    "unsupport_file": "Unsupported file format (xls only)",
+    "file_select": "Please select all sales data and promotional data files",
+    "service_choice": "Select Service!!!!"
+  },
+  "status": {
+    "waiting": "WAITING",
+    "working": "WORKING",
+    "error": "ERROR",
+    "complete": "COMPLETE"
+  },
+  "report": {
+    "job_id": "REPORT ID",
+    "service_name": "ALGORITHM NAME",
+    "start_time": "START TIME",
+    "end_time": "END TIME",
+    "status": "STATUS",
+    "report_name": "REPORT NAME"
+  },
+  "try_start_at": "REQEUST TIME",
+  "analysis_step": "STEP",
+  "null": "NO DATA",
+  "hello": "Hello"
+}
