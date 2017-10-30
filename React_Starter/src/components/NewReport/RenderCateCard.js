@@ -48,7 +48,7 @@ class RenderCateCard extends Component {
                             <Button color="secondary" className="card-hover-down-button"
                                     onClick={(e) => this.goDetail(service_id, history)}>상세</Button>
                             <Button className="card-hover-down-button"
-                                    onClick={() => this.goMyData(service_id, history)}>구매</Button>
+                                    onClick={() => this.goMyData(service_id, history)}>데모</Button>
                           </div>
                         </Card>
                       </Col>

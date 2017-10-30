@@ -8,7 +8,6 @@ class GraphContent extends Component {
     render() {
         const { obj, grid, i } = this.props;
         const title = obj.title;
-        // console.log('obj', obj);
         if (obj.tooltip) {
             if (obj.outline === "true") {
                 return (

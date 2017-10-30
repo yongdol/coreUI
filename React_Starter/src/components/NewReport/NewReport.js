@@ -28,8 +28,7 @@ class NewReport extends Component {
   getCategoryServiceList() {
     const token = sessionStorage.getItem('access_token');
     const locale = this.props.i18n.language;
-    // console.log('locale', locale);
-    // const locale = "kr";
+
     return axios.get(BACKEND_URL + "/report/new", {
       headers: {
         "Authorization": token
