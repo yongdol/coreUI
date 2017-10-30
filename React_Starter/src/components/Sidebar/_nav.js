@@ -32,23 +32,18 @@ export default {
       icon: 'icon-speedometer',
       children: [
         {
-          name: 'Cate1',
-          url: '/report/my/cate1',
+          name: 'Change in customer behavior based on marketing strategy',
+          url: '/report/my/1',
           icon: 'icon-puzzle'
         },
         {
-          name: 'Cate2',
-          url: '/report/my/cate2',
+          name: 'Promotion performance analysis and forecasting',
+          url: '/report/my/2',
           icon: 'icon-puzzle'
         },
         {
-          name: 'Cate3',
-          url: '/report/my/cate3',
-          icon: 'icon-puzzle'
-        },
-        {
-          name: 'Cate4',
-          url: '/report/my/cate4',
+          name: 'Analyze effectiveness by ad channel',
+          url: '/report/my/3',
           icon: 'icon-puzzle'
         }
       ]

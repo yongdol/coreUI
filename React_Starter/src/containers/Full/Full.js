@@ -38,7 +38,7 @@ class Full extends Component {
                 <Route exact path="/report/new/step03" name="Step03" component={Step03}/>
                 <Route exact path="/report/new/step04" name="Step04" component={Step04}/>
 
-                <Route exact path="/report/my/:category_name" name="Cate01" component={MyReport}/>
+                <Route exact path="/report/my/:category_id" name="MyReport" component={MyReport}/>
 
                 <Route exact path="/service/:service_id" name="Service" component={Service}/>
                 {/*<Route exact path="/setting/mypage" name="Mypage" component={MyPage}/>*/}
