@@ -24,6 +24,10 @@ import registerServiceWorker from "./registerServiceWorker";
 import { I18nextProvider } from 'react-i18next';
 import i18n from './utils/i18n';
 
+import 'd3';
+
+// window.d3 = d3;
+
 const history = createBrowserHistory();
 
 ReactDOM.render((
