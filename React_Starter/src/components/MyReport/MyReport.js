@@ -34,7 +34,7 @@ class MyReport extends Component {
     const category_id = this.props.match.params.category_id;
     return axios.get(BACKEND_URL + "/report/my", {
       headers: {
-        "Authorization": token
+        Authorization: token
       },
       params: {
         locale: locale,

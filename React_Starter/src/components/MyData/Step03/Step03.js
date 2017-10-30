@@ -33,10 +33,11 @@ class Step03 extends Component {
     const locale = this.props.i18n.language;
     return axios.get(BACKEND_URL + "/job_status_list", {
       headers: {
-        "Authorization": token
+        Authorization: token
       },
       params: {
-        "locale": locale
+        locale: locale,
+        filter: "waiting"
       }
     }).then((res) => {
       this.setState({data: res.data.data})

@@ -25,11 +25,11 @@ class RenderNeedFile extends Component {
     return axios.get(BACKEND_URL + "/sample_file_download", {
       responseType: 'blob',
       headers: {
-        "Authorization": token
+        Authorization: token
       },
       params: {
-        "file_num": file_num,
-        "locale": locale
+        file_num: file_num,
+        locale: locale
       }
     }).then((response) => {
       if (file_num === "1") {

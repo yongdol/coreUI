@@ -28,7 +28,7 @@ class Dashboard extends Component {
     const locale = this.props.i18n.language;
     return axios.get(BACKEND_URL + "/overview_report", {
       headers: {
-        "Authorization": token
+        Authorization: token
       },
       params: {
         locale: locale

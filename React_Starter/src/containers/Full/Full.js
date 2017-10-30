@@ -15,6 +15,7 @@ import Step04 from "../../components/MyData/Step04/Step04";
 import Service from "../../components/Service/Service";
 import NewReport from "../../components/NewReport/NewReport";
 import MyReport from "../../components/MyReport/MyReport";
+import MyPage from "../../components/MyPage/MyPage";
 
 
 class Full extends Component {
@@ -41,7 +42,8 @@ class Full extends Component {
                 <Route exact path="/report/my/:category_id" name="MyReport" component={MyReport}/>
 
                 <Route exact path="/service/:service_id" name="Service" component={Service}/>
-                {/*<Route exact path="/setting/mypage" name="Mypage" component={MyPage}/>*/}
+
+                <Route exact path="/setting/mypage" name="MyPage" component={MyPage}/>
                 <Redirect from="/" to="/cxo/sampledashboard"/>
               </Switch>
             </Container>

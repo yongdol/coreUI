@@ -31,7 +31,7 @@ class NewReport extends Component {
 
     return axios.get(BACKEND_URL + "/report/new", {
       headers: {
-        "Authorization": token
+        Authorization: token
       },
       params: {
         locale: locale
