@@ -136,22 +136,3 @@ export default {
     }
   ]
 };
-
-{
-  "summary_graph"
-:
-  [{
-    "type": "bar",
-    "data": {
-      "labels": ["\uc720\ud6a8 \ud504\ub85c\ubaa8\uc158 \ud6a8\uacfc", "\ub300\uae30\uc218\uc694", "\ud6c4\uc720\uc99d"],
-      "datasets": [{
-        "label": "대기수요/후유증 분석결과",
-        "data": [834897769, -453542973, -66725801],
-        "backgroundColor": ["rgba(255, 99, 132, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(255, 159, 64, 0.2)"],
-        "borderColor": ["rgba(255,99,132,1)", "rgba(54, 162, 235, 1)", "rgba(255, 159, 64, 1)"],
-        "borderWidth": "1"
-      }]
-    },
-    "options": {"scales": {"yAxes": [{"ticks": {" beginAtZero": "true"}}]}}
-  }]
-}
