@@ -46,14 +46,19 @@ class SummaryRender extends Component {
                                       <p>{item.value}</p>
                                   </div>
                                 )
+                              } else if (item.value === "") {
+                                return (
+                                  <div key={i}>
+                                      <p>{item.keyname}</p>
+                                  </div>
+                                )
                               } else {
                                 return (
                                   <div key={i}>
-                                      <p>{item.keyname} : {item.value}</p>
+                                    <p>{item.keyname} : {item.value}</p>
                                   </div>
                                 )
                               }
-
                             })
                           }
                         </Link>

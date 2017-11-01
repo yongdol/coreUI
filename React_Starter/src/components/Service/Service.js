@@ -4,8 +4,6 @@ import ToMyDataButton from "../Analysis/Shared/ToMyDataButton";
 import {translate} from "react-i18next";
 import BACKEND_URL from "../../utils/config";
 import axios from 'axios';
-import {isEmpty} from "lodash";
-
 
 class Service extends Component {
 
@@ -50,11 +48,15 @@ class Service extends Component {
     const style = {
       float_button_div: {
         position: "fixed",
-        // bottom: "16%",
-        // right: "13%"
+        backgroundColor:"None",
+        bottom: "16%",
+        right: "13%"
       },
       img_full: {
         width: "100%",
+      },
+      fill_color: {
+        backgroundColor:"white"
       }
     };
     if (this.state.data) {
@@ -78,7 +80,8 @@ class Service extends Component {
                 {t('btn.sample_data')}
               </Button>
               <ToMyDataButton history={history} service_id={match.params.service_id}/>
-              <Button outline className="border-round margin-left" size="sm" onClick={() => this.goHome(history)}>
+              <Button outline className="border-round margin-left" size="sm"
+                      onClick={() => this.goHome(history)} color="primary">
                 {t('btn.home')}
               </Button>
             </div>

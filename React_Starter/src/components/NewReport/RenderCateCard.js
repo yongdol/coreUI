@@ -22,7 +22,7 @@ class RenderCateCard extends Component {
     h.push("/report/new/step01/" + service_id)
   }
 
-  renderCateHead(data, history) {
+  renderCateHead(data, history, t) {
     return data.map((item, i) => {
       return (
         <Col key={i} lg="12">
@@ -44,11 +44,11 @@ class RenderCateCard extends Component {
                             {service_name}<br/>
                             {service_brief}
                           </CardBlock>
-                          <div className="card-button-box">
-                            <Button color="secondary" className="card-hover-down-button"
-                                    onClick={() => this.goDetail(service_id, history)}>상세</Button>
-                            <Button className="card-hover-down-button"
-                                    onClick={() => this.goMyData(service_id, history)}>데모</Button>
+                          <div className="card-button-box ">
+                            <Button color="success" className="card-hover-down-button float-right"
+                                    onClick={() => this.goDetail(service_id, history)}>{t('btn.detail')}</Button>
+                            <Button color="success" className="card-hover-down-button float-right"
+                                    onClick={() => this.goMyData(service_id, history)}>{t('btn.mydata')}</Button>
                           </div>
                         </Card>
                       </Col>
@@ -64,10 +64,10 @@ class RenderCateCard extends Component {
   }
 
   render() {
-    const {data, history} = this.props;
+    const {data, history, t} = this.props;
     return (
       <Row>
-        {this.renderCateHead(data, history)}
+        {this.renderCateHead(data, history, t)}
       </Row>
     );
   }

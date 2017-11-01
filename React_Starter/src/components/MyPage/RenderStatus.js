@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Badge} from "reactstrap";
-import {NavLink} from "react-router-dom";
 import {translate} from "react-i18next";
 
 class RenderStatus extends Component {

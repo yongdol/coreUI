@@ -98,9 +98,7 @@ class Login extends Component {
                                     <CardBlock className="card-body text-center">
                                         <div>
                                             <h2>Sign up</h2>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                                tempor incididunt ut
-                                                labore et dolore magna aliqua.</p>
+                                            <p>Join Sentience</p>
                                             <Button color="primary" className="mt-3" active onClick={this.goRegister}>Register Now!</Button>
                                         </div>
                                     </CardBlock>

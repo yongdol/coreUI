@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
-import {Badge, Card, CardBlock, CardHeader, Col, Pagination, PaginationItem, PaginationLink, Table} from "reactstrap";
+import {
+  Badge, Card, CardBlock, CardHeader, Col, Pagination, PaginationItem, PaginationLink, Row,
+  Table
+} from "reactstrap";
 import axios from 'axios';
 import BACKEND_URL from "../../utils/config";
 import {isEmpty} from "lodash";
@@ -42,19 +45,27 @@ class MyPage extends Component {
 
   render() {
     const style = {
-      textAlign: "center"
+      center_text: {
+        textAlign: 'center'
+      },
+      center_spinner: {
+        margin: 'auto',
+        paddingTop: '200px'
+      }
     };
     return (
       <div className="animated fadeIn">
         {
           isEmpty(this.state.data) ? (
-            <div className="sweet-loading spinner-wrap">
-              <BeatLoader
-                color={'#4A90E2'}
-                loading={true}
-                size={20}
-              />
-            </div>
+            <Row>
+              <div className="sweet-loading" style={style.center_spinner}>
+                <BeatLoader
+                  color={'#4A90E2'}
+                  loading={true}
+                  size={20}
+                />
+              </div>
+            </Row>
           ) :
             <Col xs="12">
               <Card>
@@ -65,15 +76,15 @@ class MyPage extends Component {
                   <Table responsive bordered>
                     <thead>
                     <tr>
-                      <th style={style}>id</th>
-                      <th style={style}>service_name</th>
-                      <th style={style}>report_name</th>
-                      <th style={style}>start time</th>
-                      <th style={style}>end time</th>
-                      <th style={style}>status</th>
+                      <th style={style.center_text}>id</th>
+                      <th style={style.center_text}>service_name</th>
+                      <th style={style.center_text}>report_name</th>
+                      <th style={style.center_text}>start time</th>
+                      <th style={style.center_text}>end time</th>
+                      <th style={style.center_text}>status</th>
                     </tr>
                     </thead>
-                    <tbody style={style}>
+                    <tbody style={style.center_text}>
                     {
                       this.state.data.map((item, i) => {
                         // console.log('item', item);

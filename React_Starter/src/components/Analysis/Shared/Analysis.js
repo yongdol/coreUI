@@ -6,6 +6,7 @@ import SampleAnalysis from "../SampleAnalysis/SampleAnalysis";
 import MyAnalysis from "../MyAnalysis/MyAnalysis";
 import {isEmpty} from "lodash";
 import {BeatLoader} from "react-spinners";
+import {Row} from "reactstrap";
 
 
 class Analysis extends Component {
@@ -43,6 +44,7 @@ class Analysis extends Component {
   }
 
   analysisRender(data, s_id, match, history) {
+    // console.log('data', data[0]['big_json']);
     let eval_data = eval('(' + data[0]['big_json'] + ')');
     let service_id = s_id;
     let append = [];
@@ -69,18 +71,25 @@ class Analysis extends Component {
 
   render() {
     const {history, match} = this.props;
-
+    const style = {
+      center: {
+        margin: 'auto',
+        paddingTop: '200px'
+      }
+    };
     return (
       <div className="animated fadeIn">
         {
           isEmpty(this.state.data) ? (
-              <div className="sweet-loading spinner-wrap">
+            <Row>
+              <div className="sweet-loading" style={style.center}>
                 <BeatLoader
                   color={'#4A90E2'}
                   loading={true}
                   size={20}
                 />
               </div>
+            </Row>
             ) :
             this.analysisRender(this.state.data.data, this.state.data.service_id, match, history)
         }

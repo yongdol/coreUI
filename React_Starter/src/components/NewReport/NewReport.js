@@ -8,7 +8,6 @@ import RenderCateCard from "./RenderCateCard";
 import {translate} from "react-i18next";
 
 
-
 class NewReport extends Component {
 
   constructor(props) {
@@ -58,9 +57,10 @@ class NewReport extends Component {
     };
     // console.log('this.props', this.props );
     return (
-      <div>
+      <div className="animated fadeIn">
         {
           isEmpty(this.state.data) ? (
+            <Row>
               <div className="sweet-loading" style={style.center}>
                 <BeatLoader
                   color={'#4A90E2'}
@@ -68,6 +68,7 @@ class NewReport extends Component {
                   size={20}
                 />
               </div>
+            </Row>
             ) :
             <RenderCateCard data={this.state.data} history={this.props.history}/>
         }

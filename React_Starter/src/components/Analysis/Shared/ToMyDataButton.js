@@ -19,12 +19,12 @@ class ToMyDataButton extends Component {
     if (token) {
       return (
         <Button outline className="border-round" size="sm"
-                onClick={() => this.goStep01(history, service_id)}>{t('btn.mydata')}</Button>
+                onClick={() => this.goStep01(history, service_id)} color="primary">{t('btn.mydata')} </Button>
       )
     } else {
       return (
         <Button outline className="border-round" size="sm"
-                onClick={() => this.goLogin(history)}>{t('btn.mydata')}</Button>
+                onClick={() => this.goLogin(history)} color="primary">{t('btn.mydata')}</Button>
       )
     }
   }
