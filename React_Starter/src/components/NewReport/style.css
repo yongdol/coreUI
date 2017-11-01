@@ -19,8 +19,9 @@
 }
 .card-hover-down-button {
   margin-top: 50px;
+  margin-right: 1px;
 }
 .card-button-box {
-  -webkit-transition: all 0.7s ease;
-  transition: all 0.7s ease;
+  -webkit-transition: all 1.0s ease;
+  transition: all 1.0s ease;
 }

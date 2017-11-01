@@ -1,17 +1,10 @@
 import React, {Component} from 'react';
 import {Button, Card, CardBlock, CardHeader, Col, Row} from "reactstrap";
 import './style.css'
-import {toInteger} from "lodash";
 import {translate} from "react-i18next";
 
 
 class RenderCateCard extends Component {
-  constructor(props) {
-    super(props);
-    this.goDetail = this.goDetail.bind(this);
-    this.goMyData = this.goMyData.bind(this);
-  }
-
 
   goDetail(service_id, h) {
     h.push("/service/" + service_id)
@@ -45,9 +38,9 @@ class RenderCateCard extends Component {
                             {service_brief}
                           </CardBlock>
                           <div className="card-button-box ">
-                            <Button color="success" className="card-hover-down-button float-right"
+                            <Button size="sm" color="success" className="card-hover-down-button float-right"
                                     onClick={() => this.goDetail(service_id, history)}>{t('btn.detail')}</Button>
-                            <Button color="success" className="card-hover-down-button float-right"
+                            <Button size="sm" color="success" className="card-hover-down-button float-right"
                                     onClick={() => this.goMyData(service_id, history)}>{t('btn.mydata')}</Button>
                           </div>
                         </Card>
