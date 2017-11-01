@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import BACKEND_URL from "../../../utils/config";
 import axios from 'axios';
 import {translate} from "react-i18next";
-import SampleAnalysis from "../SampleAnalysis/SampleAnalysis";
 import MyAnalysis from "../MyAnalysis/MyAnalysis";
 import {isEmpty} from "lodash";
 import {BeatLoader} from "react-spinners";
@@ -29,10 +28,9 @@ class Analysis extends Component {
     const locale = this.props.i18n.language;
     return axios.get(BACKEND_URL + "/detail_report", {
       headers: {
-        "Authorization": token
+        Authorization: token
       },
       params: {
-        // job_id: job_id ? job_id : this.props.match.params.job_id,
         job_id: job_id,
         locale: locale
       }
@@ -44,7 +42,6 @@ class Analysis extends Component {
   }
 
   analysisRender(data, s_id, match, history) {
-    // console.log('data', data[0]['big_json']);
     let eval_data = eval('(' + data[0]['big_json'] + ')');
     let service_id = s_id;
     let append = [];

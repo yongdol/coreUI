@@ -15,7 +15,6 @@ class ToMyDataButton extends Component {
   render() {
     const token = sessionStorage.getItem('access_token');
     const {t, history, service_id} = this.props;
-    // console.log('history', history);
     if (token) {
       return (
         <Button outline className="border-round" size="sm"

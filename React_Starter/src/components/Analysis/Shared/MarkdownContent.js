@@ -7,18 +7,16 @@ class MarkdownContent extends Component {
   render() {
     const {obj, grid, i} = this.props;
     const codes = obj.markdown;
-    console.log('obj', obj);
     if (obj.outline) {
-      console.log('hihi');
       return (
-        <Col lg={grid} className="border-box">
+        <Col lg={grid} md={grid} sm={grid} xs={grid} className="border-box" key={i}>
           <h2>{obj.title}</h2>
           <Markdown source={codes} options={{html: true}} className="markdown-text"/>
         </Col>
       )
     } else {
       return (
-        <Col lg={grid}>
+        <Col lg={grid} md={grid} sm={grid} xs={grid} key={i}>
           <h2>{obj.title}</h2>
           <Markdown source={codes} options={{html: true}} className="markdown-text"/>
         </Col>
