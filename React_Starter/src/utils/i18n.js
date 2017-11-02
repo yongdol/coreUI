@@ -6,7 +6,8 @@ i18n
   .use(Backend)
   .use(LanguageDetector)
   .init({
-    fallbackLng: 'en',
+    // lng: 'en',
+    // fallbackLng: 'en',
     // have a common namespace used around the full app
     ns: ['translations'],
     defaultNS: 'translations',
