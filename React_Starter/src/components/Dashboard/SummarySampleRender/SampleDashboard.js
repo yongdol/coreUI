@@ -18,7 +18,7 @@ class SampleDashboard extends Component {
     this.pmList = this.pmList.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.pmList();
     // console.log('token', token );
   }
