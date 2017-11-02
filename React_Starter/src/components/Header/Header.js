@@ -73,7 +73,7 @@ class Header extends Component {
         <NavbarToggler className="d-md-down-none" onClick={this.sidebarToggle}>&#9776;</NavbarToggler>
         <Nav className="ml-auto" navbar>
           <NavItem>
-            <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+            <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle} className='user-email'>
               <DropdownToggle className="nav-link dropdown-toggle">
                 <span className="d-md-down-none">{email}</span>
               </DropdownToggle>
