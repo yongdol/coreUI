@@ -65,7 +65,6 @@ class Analysis extends Component {
     )
   }
 
-
   render() {
     const {history, match} = this.props;
     const style = {
