@@ -1,0 +1,5 @@
+ul.nav-dropdown-items
+  li.nav-item
+    a.nav-link {
+  padding-left: 30px !important;
+}

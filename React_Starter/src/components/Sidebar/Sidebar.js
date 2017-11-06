@@ -3,6 +3,7 @@ import {NavLink} from 'react-router-dom';
 import {Badge, Nav, NavItem} from 'reactstrap';
 import classNames from 'classnames';
 import nav from './_nav'
+import './style.css'
 
 class Sidebar extends Component {
 
@@ -69,6 +70,12 @@ class Sidebar extends Component {
         };
 
         // nav dropdown
+        const iconStyle = {
+          iconMargin: {
+            marginLeft: "10px",
+            marginRight: "0px",
+          }
+        };
         const navDropdown = (item, key) => {
             return (
                 <li key={key} className={activeRoute(item.url, props)}>
