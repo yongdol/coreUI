@@ -9,7 +9,6 @@ class SampleAnalysis extends Component {
 
     render() {
         const {data, scheme, job_id, history, service_id} = this.props;
-        // console.log('data', data);
         return (
             <Card className="card-accent-danger">
                 <CardHeader>

@@ -32,7 +32,6 @@ class SummaryRender extends Component {
         color: '#151b1e',
       }
     };
-    // console.log('info', this.props.graph);
     const {service_id, service_name, service_brief, job_id, report_name, graph, info, history} = this.props;
     if (graph === "null") {
       return (

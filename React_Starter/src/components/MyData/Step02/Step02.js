@@ -25,8 +25,6 @@ class Step02 extends Component {
 
     render() {
         const { t, history, location } = this.props;
-        // console.log('location', location.state.res);
-        // console.log('location', location.state.file1);
         if (sessionStorage.getItem('access_token')) {
             return (
                 <div className="contents animated fadeIn">
@@ -54,7 +52,6 @@ class Step02 extends Component {
                                         <td>
                                             {
                                                 location.state.file1.map((item, key) => {
-                                                        // console.log('item', item.name);
                                                         return (
                                                             <p>
                                                                 {item.name}
@@ -72,7 +69,6 @@ class Step02 extends Component {
                                         <td>
                                             {
                                                 location.state.file2.map((item, key) => {
-                                                    // console.log('item', item.name);
                                                     return (
                                                         <p>
                                                             {item.name}

@@ -11,7 +11,6 @@ class RenderCateCard extends Component {
   }
 
   goMyData(service_id, h) {
-    // console.log('service_id', service_id);
     h.push("/report/new/step01/" + service_id)
   }
 
