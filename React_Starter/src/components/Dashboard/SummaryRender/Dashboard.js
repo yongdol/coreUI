@@ -40,7 +40,7 @@ class Dashboard extends Component {
         this.setState({render_error: result});
       }
     }).catch((res) => {
-      console.log('res', res);
+      this.setState({render_error: res.response.data.e_msg.message});
     });
   }
 
@@ -57,17 +57,19 @@ class Dashboard extends Component {
       <div className="animated fadeIn">
         <Row>
           {
-            isEmpty(this.state.data) ? (
+            isEmpty(this.state.data) ?
+              this.state.render_error ? (
+                <div className="sweet-loading" style={style.center}>
+                  {this.state.render_error} <br/>
+                  {t('error.u_dont_have_report')}
+                </div>
+              ) : (
                 <div className="sweet-loading" style={style.center}>
                   <BeatLoader
                     color={'#4A90E2'}
                     loading={true}
                     size={20}
                   />
-                </div>
-              ) : this.state.data.length === 13 ? (
-                <div className="sweet-loading" style={style.center}>
-                  {t('error.u_dont_have_report')}
                 </div>
               ) :
               this.state.data.map((item, i) => {

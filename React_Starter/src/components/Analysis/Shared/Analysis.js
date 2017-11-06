@@ -37,7 +37,7 @@ class Analysis extends Component {
     }).then((res) => {
       this.setState({data: res.data});
     }).catch((error) => {
-      console.log('error', error);
+      this.setState({render_error: error.response.data.e_msg.message});
     });
   }
 
@@ -76,16 +76,23 @@ class Analysis extends Component {
     return (
       <div className="animated fadeIn">
         {
-          isEmpty(this.state.data) ? (
-            <Row>
-              <div className="sweet-loading" style={style.center}>
-                <BeatLoader
-                  color={'#4A90E2'}
-                  loading={true}
-                  size={20}
-                />
-              </div>
-            </Row>
+          isEmpty(this.state.data) ?
+            this.state.render_error ? (
+              <Row>
+                <div className="sweet-loading" style={style.center}>
+                  {this.state.render_error}
+                </div>
+              </Row>
+            ) : (
+              <Row>
+                <div className="sweet-loading" style={style.center}>
+                  <BeatLoader
+                    color={'#4A90E2'}
+                    loading={true}
+                    size={20}
+                  />
+                </div>
+              </Row>
             ) :
             this.analysisRender(this.state.data.data, this.state.data.service_id, match, history)
         }
