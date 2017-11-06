@@ -6,19 +6,17 @@ i18n
   .use(Backend)
   .use(LanguageDetector)
   .init({
-    // lng: 'en',
-    // fallbackLng: 'en',
-    // have a common namespace used around the full app
+    fallbackLng: 'en',
     ns: ['translations'],
     defaultNS: 'translations',
     debug: true,
     interpolation: {
-      escapeValue: false, // not needed for react!!
+      escapeValue: false,
     },
     react: {
       wait: true
-    }
+    },
+    useCookie: false
   });
 
-
-export default i18n;
+export default i18n
