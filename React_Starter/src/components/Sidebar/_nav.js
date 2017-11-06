@@ -5,14 +5,14 @@ export default {
       name: 'Dashboard',
     },
     {
-      name: 'Sample DashBoard',
-      url: '/cxo/sampledashboard',
-      icon: 'icon-speedometer',
+      name: 'My Dashboard',
+      url: '/cxo/dashboard',
+      icon: 'icon-book-open',
     },
     {
-      name: 'My DashBoard',
-      url: '/cxo/dashboard',
-      icon: 'icon-chart',
+      name: 'Example Dashboard',
+      url: '/cxo/sampledashboard',
+      icon: 'icon-speedometer',
     },
     {
       divider: true
@@ -22,41 +22,41 @@ export default {
       name: 'Report',
     },
     {
-      name: 'New Report',
+      name: 'Create Report',
       url: '/report/new',
-      icon: 'icon-speedometer',
+      icon: 'icon-note',
     },
     {
-      name: 'My Report',
+      name: 'My Reports',
       url: '/report/my',
-      icon: 'icon-speedometer',
+      icon: 'icon-folder-alt',
       children: [
         {
           name: 'Change in customer behavior based on marketing strategy',
           url: '/report/my/1',
-          icon: 'icon-puzzle'
+          icon: 'icon-doc'
         },
         {
           name: 'Promotion performance analysis and forecasting',
           url: '/report/my/2',
-          icon: 'icon-puzzle'
+          icon: 'icon-doc'
         },
         {
           name: 'Analyze effectiveness by ad channel',
           url: '/report/my/3',
-          icon: 'icon-puzzle'
+          icon: 'icon-doc'
         }
       ]
     },
     {
-      name: 'Service',
+      name: 'Services',
       url: '/service',
       icon: 'icon-puzzle',
       children: [
         {
           name: 'PushPull',
           url: '/service/1',
-          icon: 'icon-puzzle'
+          icon: 'icon-energy'
         }
       ]
     }
@@ -67,7 +67,7 @@ export default {
       name: 'Dashboard',
     },
     {
-      name: 'SampleBoard',
+      name: 'Example Dashboard',
       url: '/cxo/sampledashboard',
       icon: 'icon-speedometer',
     }

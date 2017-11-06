@@ -1,12 +1,12 @@
 const routes = {
   //DASHBOARD
   "/cxo": "Dashboard",
-  "/cxo/sampledashboard": "Sample Dashboard",
+  "/cxo/sampledashboard": "Example Dashboard",
   "/cxo/dashboard": "My Dashboard",
 
   //REPORT
-  "/report": "Report",
-  "/report/new": "New Report",
+  "/report": "Reports",
+  "/report/new": "Create Report",
   "/report/new/step01": "Step01",
   "/report/new/step02": "Step02",
   "/report/new/step03": "Step03",
@@ -19,7 +19,7 @@ const routes = {
   "/service/1": "PushPull",
 
   //SETTINGS
-  "/setting":"Setting",
+  // "/setting":"Setting",
   "/setting/mypage" : "MyPage"
 };
 export default routes;
