@@ -21,7 +21,8 @@ class Header extends Component {
     super(props);
     this.toggle = this.toggle.bind(this);
     this.state = {
-      dropdownOpen: false
+      dropdownOpen: false,
+      // language : navigator.language
     };
   }
 
@@ -58,7 +59,6 @@ class Header extends Component {
     const changeLanguage = (lng) => {
       i18n.changeLanguage(lng);
       const url = window.location;
-      // console.log('url', url.href.includes("step01"));
       if (url.href.includes("step01") || url.href.includes("step02")) {
         console.log('pass');
       } else {
@@ -80,7 +80,6 @@ class Header extends Component {
               <DropdownMenu right className={this.state.dropdownOpen ? 'show' : ''}>
                 <DropdownItem header tag="div"
                               className="text-center"><strong>{t('member.setting')}</strong></DropdownItem>
-                <DropdownItem><i className="fa fa-wrench"></i>{t('member.setting')}</DropdownItem>
                 <DropdownItem>
                   <NavLink href="#/setting/mypage">
                     <i className="fa fa-user"></i>{t('member.mypage')}</NavLink>
@@ -94,7 +93,7 @@ class Header extends Component {
             </Dropdown>
           </NavItem>
           <NavItem className="d-md-down-none flag-right">
-            <img src="/img/flags/country_korea.png" onClick={() => changeLanguage('ko-KR')}/>
+            <img src="/img/flags/country_korea.png" onClick={() => changeLanguage('ko')}/>
             <img src="/img/flags/country_usa.png" onClick={() => changeLanguage('en')}/>
           </NavItem>
         </Nav>
@@ -107,14 +106,14 @@ class Header extends Component {
         <NavbarBrand href="/#/cxo/sampledashboard"></NavbarBrand>
         <NavbarToggler className="d-md-down-none" onClick={this.sidebarToggle}>&#9776;</NavbarToggler>
         <Nav className="ml-auto" navbar>
-          <NavItem className="px-3">
+          <NavItem className="px-3 flag-right">
             <NavLink href="#/cxo/login"><i className="fa fa-fw fa-sign-in"/>{t('member.login')}</NavLink>
           </NavItem>
-          <NavItem className="px-3">
+          <NavItem className="px-3 flag-right">
             <NavLink href="#/cxo/register"><i className="fa fa-fw fa-user"/>{t('member.signup')}</NavLink>
           </NavItem>
           <NavItem className="d-md-down-none flag-right">
-            <img src="/img/flags/country_korea.png" onClick={() => changeLanguage('ko-KR')}/>
+            <img src="/img/flags/country_korea.png" onClick={() => changeLanguage('ko')}/>
             <img src="/img/flags/country_usa.png" onClick={() => changeLanguage('en')}/>
           </NavItem>
         </Nav>
