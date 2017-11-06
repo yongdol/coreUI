@@ -25,7 +25,7 @@ class Register extends Component {
             if (res.data.e_msg.status === 200) {
                 sessionStorage.setItem('email', email);
                 sessionStorage.setItem('access_token', res.data.access_token);
-                this.props.history.push("/dashboard")
+                this.props.history.push("/cxo/dashboard")
             } else {
                 const result = res.data.e_msg.message;
                 this.setState({render_error: result});
