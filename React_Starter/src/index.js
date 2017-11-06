@@ -30,17 +30,17 @@ import 'd3';
 const history = createBrowserHistory();
 
 ReactDOM.render((
-    <I18nextProvider i18n={i18n}>
-        <HashRouter history={history}>
-            <Switch>
-                <Route exact path="/cxo/login" name="Login Page" component={Login}/>
-                <Route exact path="/cxo/register" name="Register Page" component={Register}/>
-                <Route exact path="/404" name="Page 404" component={Page404}/>
-                <Route exact path="/500" name="Page 500" component={Page500}/>
-                <Route path="/" name="Home" component={Full}/>
-            </Switch>
-        </HashRouter>
-    </I18nextProvider>
+  <I18nextProvider i18n={i18n}>
+    <HashRouter history={history}>
+      <Switch>
+        <Route exact path="/cxo/login" name="Login Page" component={Login}/>
+        <Route exact path="/cxo/register" name="Register Page" component={Register}/>
+        <Route exact path="/404" name="Page 404" component={Page404}/>
+        <Route exact path="/500" name="Page 500" component={Page500}/>
+        <Route path="/" name="Home" component={Full}/>
+      </Switch>
+    </HashRouter>
+  </I18nextProvider>
 ), document.getElementById('root'));
 registerServiceWorker();
 
