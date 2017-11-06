@@ -29,7 +29,7 @@ class RenderNeedFile extends Component {
       },
       params: {
         file_num: file_num,
-        locale: locale
+        locale: locale.length > 3 ? locale.slice(0,2) : locale
       }
     }).then((response) => {
       if (file_num === "1") {

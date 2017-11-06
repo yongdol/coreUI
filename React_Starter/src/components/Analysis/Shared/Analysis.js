@@ -32,7 +32,7 @@ class Analysis extends Component {
       },
       params: {
         job_id: job_id,
-        locale: locale
+        locale: locale.length > 3 ? locale.slice(0,2) : locale
       }
     }).then((res) => {
       this.setState({data: res.data});

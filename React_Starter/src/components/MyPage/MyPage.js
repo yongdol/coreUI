@@ -31,7 +31,7 @@ class MyPage extends Component {
         Authorization: token
       },
       params: {
-        locale: locale,
+        locale: locale.length > 3 ? locale.slice(0,2) : locale,
         filter: "all"
       }
     }).then((res) => {
@@ -87,7 +87,6 @@ class MyPage extends Component {
                     <tbody style={style.center_text}>
                     {
                       this.state.data.map((item, i) => {
-                        // console.log('item', item);
                         const id = item.job_id;
                         const service_name = item.service_name;
                         const status = item.status;

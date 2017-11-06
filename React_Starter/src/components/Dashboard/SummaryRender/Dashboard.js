@@ -20,7 +20,6 @@ class Dashboard extends Component {
 
   componentWillMount() {
     this.pmList();
-    // console.log('token', token );
   }
 
   pmList() {
@@ -31,11 +30,11 @@ class Dashboard extends Component {
         Authorization: token
       },
       params: {
-        locale: locale
+        locale: locale.length > 3 ? locale.slice(0,2) : locale
       }
     }).then((res) => {
       if (res.data.e_msg.status === 200) {
-        this.setState({data: res.data.data})
+        this.setState({data: res.data.data});
       } else {
         const result = res.data.e_msg.message;
         this.setState({render_error: result});
@@ -53,6 +52,7 @@ class Dashboard extends Component {
         paddingTop: '200px'
       }
     };
+    const {t} = this.props;
     return (
       <div className="animated fadeIn">
         <Row>
@@ -64,6 +64,10 @@ class Dashboard extends Component {
                     loading={true}
                     size={20}
                   />
+                </div>
+              ) : this.state.data.length === 13 ? (
+                <div className="sweet-loading" style={style.center}>
+                  {t('error.u_dont_have_report')}
                 </div>
               ) :
               this.state.data.map((item, i) => {

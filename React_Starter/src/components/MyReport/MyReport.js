@@ -37,7 +37,7 @@ class MyReport extends Component {
         Authorization: token
       },
       params: {
-        locale: locale,
+        locale: locale.length > 3 ? locale.slice(0,2) : locale,
         category_id: category_id
       }
     }).then((res) => {

@@ -24,8 +24,6 @@ class Step03 extends Component {
   componentDidMount() {
     this.waitingList();
     this.allWaitingTime();
-    // this.allWaitingTime().then((res) => console.log('data', res.data.waiting_time_in_min ));
-    // this.interval = setInterval(this.myWaitingTime, 3000)
   }
 
   waitingList() {
@@ -36,7 +34,7 @@ class Step03 extends Component {
         Authorization: token
       },
       params: {
-        locale: locale,
+        locale: locale.length > 3 ? locale.slice(0,2) : locale,
         filter: "waiting"
       }
     }).then((res) => {
@@ -62,7 +60,6 @@ class Step03 extends Component {
 
   render() {
     const {t, history} = this.props;
-    // console.log('data', history);
     if (this.state.data) {
       return (
         <div className="contents animated fadeIn">

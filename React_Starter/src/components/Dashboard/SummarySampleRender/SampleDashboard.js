@@ -20,14 +20,13 @@ class SampleDashboard extends Component {
 
   componentDidMount() {
     this.pmList();
-    // console.log('token', token );
   }
 
   pmList() {
     const locale = this.props.i18n.language;
     return axios.get(BACKEND_URL + "/overview_sample_report", {
       params: {
-        locale: locale
+        locale: locale.length > 3 ? locale.slice(0,2) : locale
       }
     }).then((res) => {
       if (res.data.e_msg.status === 200) {

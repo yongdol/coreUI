@@ -20,7 +20,6 @@ class NewReport extends Component {
 
   componentDidMount() {
     this.getCategoryServiceList();
-    // console.log('locale2', this.props);
   }
 
 
@@ -33,7 +32,7 @@ class NewReport extends Component {
         Authorization: token
       },
       params: {
-        locale: locale
+        locale: locale.length > 3 ? locale.slice(0,2) : locale
       }
     }).then((res) => {
       if (res.data.e_msg.status === 200) {
@@ -55,7 +54,6 @@ class NewReport extends Component {
         paddingTop: '200px'
       }
     };
-    // console.log('this.props', this.props );
     return (
       <div className="animated fadeIn">
         {
