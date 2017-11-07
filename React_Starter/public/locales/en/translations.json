@@ -43,7 +43,8 @@
     "unsupport_file": "Unsupported file format (xls only)",
     "file_select": "Please select all sales data and promotional data files",
     "service_choice": "Select Service!!!!",
-    "u_dont_have_report": "You don't have report. Go 'Create Report' menu and create your own report"
+    "u_dont_have_report": "You don't have report. Go 'Create Report' menu and create your own report",
+    "parsing": "Data Parsing Error"
   },
   "status": {
     "waiting": "WAITING",

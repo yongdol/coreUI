@@ -43,7 +43,8 @@
     "unsupport_file": "지원하지 않는 파일 형식입니다.(xls만 가능)",
     "file_select": "매출데이터, 프로모션데이터 2개 파일을 모두 선택해 주세요",
     "service_choice": "서비스를 선택하세요!",
-    "u_dont_have_report": "분석보고서가 없습니다. 'Create Report' 메뉴로 가서 분석보고서를 만드세요"
+    "u_dont_have_report": "분석보고서가 없습니다. 'Create Report' 메뉴로 가서 분석보고서를 만드세요",
+    "parsing": "데이터 형태 오류(데이터를 확인 하세요)"
   },
   "status": {
     "waiting": "대기 중",
