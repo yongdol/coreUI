@@ -49,11 +49,6 @@ class RenderTable extends Component {
   }
 
   render() {
-    const style = {
-      center_text: {
-        textAlign: 'center'
-      }
-    };
     if (this.props.outline) {
       return (
         <Col lg={this.props.grid}>

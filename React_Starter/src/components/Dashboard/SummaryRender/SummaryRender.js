@@ -21,50 +21,54 @@ class SummaryRender extends Component {
       },
       link: {
         color: '#151b1e',
+      },
+      min_width: {
+        minWidth: '300px'
+      },
+      div_center: {
+        display: 'table',
+        margin: 'auto'
       }
     };
-    const {service_id, service_name, service_brief, job_id, report_name, graph, info, history} = this.props;
-    if (graph === 'null') {
+    const {service_id, service_name, service_brief, job_id, report_name, graph, info_html, history} = this.props;
+    if (graph === "null" && info_html !== "null") {
       return (
-        <Col lg="6" xs="12">
-            <Card className="card-accent-success">
-                <RenderModal
-                  service_id={service_id}
-                  service_name={service_name}
-                  service_brief={service_brief}
-                  report_name={report_name}
-                  history={history}
-                />
-                <Row>
-                    <CardBlock className="col-12">
-                        <Link to={"/cxo/analysis/" + job_id} style={style.link}>
-                          {
-                            info.map((item, i) => {
-                              if (item.keyname === "") {
-                                return (
-                                  <div key={i}>
-                                      <p>{item.value}</p>
-                                  </div>
-                                )
-                              } else if (item.value === "") {
-                                return (
-                                  <div key={i}>
-                                      <p>{item.keyname}</p>
-                                  </div>
-                                )
-                              } else {
-                                return (
-                                  <div key={i}>
-                                    <p>{item.keyname} : {item.value}</p>
-                                  </div>
-                                )
-                              }
-                            })
-                          }
-                        </Link>
-                    </CardBlock>
-                </Row>
-            </Card>
+        <Col lg="6" sm="12" xs="12">
+          <Card className="card-accent-danger">
+            <RenderModal
+              service_id={service_id}
+              service_name={service_name}
+              service_brief={service_brief}
+              report_name={report_name}
+              history={history}
+            />
+            <Row>
+              <CardBlock className="col-12">
+                <Link to={"/cxo/analysis/" + job_id} style={style.link}>
+                  <div dangerouslySetInnerHTML={{__html: info_html[0]['html']}}></div>
+                </Link>
+              </CardBlock>
+            </Row>
+          </Card>
+        </Col>
+      )
+    } else if (graph === "null" && info_html === "null") {
+      return (
+        <Col lg="6" sm="12" xs="12">
+          <Card className="card-accent-danger">
+            <RenderModal
+              service_id={service_id}
+              service_name={service_name}
+              service_brief={service_brief}
+              report_name={report_name}
+              history={history}
+            />
+            <Row>
+              <CardBlock>
+                <div>{t('error.parsing')}</div>
+              </CardBlock>
+            </Row>
+          </Card>
         </Col>
       )
     } else {
@@ -79,9 +83,9 @@ class SummaryRender extends Component {
                   history={history}
                 />
                 <Row>
-                    <CardBlock className="card-body col-6">
+                    <CardBlock className="card-body col-lg-8 col-sm-12">
                         <div>
-                            <div className="chart-wrapper">
+                            <div className="chart-wrapper" style={style.min_width}>
                               {
                                 graph.map((item, i) => {
                                   return (
@@ -97,26 +101,9 @@ class SummaryRender extends Component {
                             </div>
                         </div>
                     </CardBlock>
-                    <CardBlock className="col-6">
+                    <CardBlock className="col-lg-4 col-sm-12" style={style.div_center}>
                         <Link to={"/cxo/analysis/" + job_id} style={style.link}>
-                          {
-                            info.map((item, i) => {
-                              if (item.keyname === "") {
-                                return (
-                                  <div key={i}>
-                                      <p>{item.value}</p>
-                                  </div>
-                                )
-                              } else {
-                                return (
-                                  <div key={i}>
-                                      <p>{item.keyname} : {item.value}</p>
-                                  </div>
-                                )
-                              }
-
-                            })
-                          }
+                          <div dangerouslySetInnerHTML={{__html: info_html[0]['html']}}></div>
                         </Link>
                     </CardBlock>
                 </Row>

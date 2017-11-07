@@ -8,10 +8,15 @@ class GraphContent extends Component {
     render() {
         const { obj, grid, i } = this.props;
         const title = obj.title;
+        const style = {
+          min_width: {
+            minWidth: '300px'
+          }
+        };
         if (obj.tooltip) {
             if (obj.outline) {
                 return (
-                    <Col key={i} lg={grid} md={grid} sm={grid} xs={grid} className="border-box">
+                    <Col key={i} lg={grid} md={grid} sm={grid} xs={grid} className="border-box" style={style.min_width}>
                         <h2>
                             {title}
                         </h2>
@@ -24,7 +29,7 @@ class GraphContent extends Component {
                 )
             } else {
                 return (
-                    <Col key={i} lg={grid} md={grid} sm={grid} xs={grid}>
+                    <Col key={i} lg={grid} md={grid} sm={grid} xs={grid} style={style.min_width}>
                         <h2>
                             {title}
                         </h2>
@@ -39,7 +44,7 @@ class GraphContent extends Component {
         } else {
             if (obj.outline) {
                 return (
-                    <Col key={i} lg={grid} md={grid} sm={grid} xs={grid} className="border-box">
+                    <Col key={i} lg={grid} md={grid} sm={grid} xs={grid} className="border-box" style={style.min_width}>
                         <h2>
                             {title}
                         </h2>
@@ -48,7 +53,7 @@ class GraphContent extends Component {
                 )
             } else {
                 return (
-                    <Col key={i} lg={grid} md={grid} sm={grid} xs={grid}>
+                    <Col key={i} lg={grid} md={grid} sm={grid} xs={grid} style={style.min_width}>
                         <h2>
                             {title}
                         </h2>

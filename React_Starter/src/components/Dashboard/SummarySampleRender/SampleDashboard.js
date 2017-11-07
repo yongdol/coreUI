@@ -30,13 +30,12 @@ class SampleDashboard extends Component {
       }
     }).then((res) => {
       if (res.data.e_msg.status === 200) {
-        this.setState({data: res.data.data})
+        this.setState({data: res.data.data});
       } else {
-        const result = res.data.e_msg.message;
-        this.setState({render_error: result});
+        this.setState({render_error: res.data.e_msg.message});
       }
-    }).catch((res) => {
-      console.log('res', res);
+    }).catch((error) => {
+      console.log('error', error);
     });
   }
 
@@ -66,7 +65,7 @@ class SampleDashboard extends Component {
               const service_brief = item.service_brief;
               const report_name = item.report_name;
               const json_data = JSON.parse(item.sum_json);
-              const sum_info = json_data.summary_info;
+              const sum_info_html = json_data.summary_info_html;
               const sum_graph = json_data.summary_graph;
               return <SummarySampleRender
                 key={i}
@@ -75,7 +74,7 @@ class SampleDashboard extends Component {
                 service_name={service_name}
                 service_brief={service_brief}
                 report_name={report_name}
-                info={sum_info}
+                info_html={sum_info_html}
                 graph={sum_graph}
                 history={this.props.history}
               />
