@@ -32,7 +32,7 @@ class RenderCateCard extends Component {
                     return (
                       <Col lg="4" key={i}>
                         <Card className="card-container">
-                          <CardBlock>
+                          <CardBlock className="card-padding-right">
                             {service_name}<br/>
                             {service_brief}
                             <Button id="btn1" className="hidden-btn" size="sm" color="success"

@@ -1,8 +1,8 @@
 #btn1 {
-  top: 10px;
+  bottom: 39px;
 }
 #btn2 {
-  bottom: 10px;
+  bottom: 8px;
 }
 
 
@@ -39,4 +39,8 @@
 
 .icon-right-margin {
   margin-right: 10px;
+}
+
+.card-padding-right {
+  padding-right: 25px !important;
 }
