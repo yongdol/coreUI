@@ -35,13 +35,15 @@ class RenderCateCard extends Component {
                           <CardBlock>
                             {service_name}<br/>
                             {service_brief}
+                            <Button id="btn1" className="hidden-btn" size="sm" color="success"
+                                    onClick={() => this.goDetail(service_id, history)}>
+                              <i className="fa fa-file-text-o fa-lg icon-right-margin"></i>{t('btn.detail')}
+                            </Button>
+                            <Button id="btn2" className="hidden-btn" size="sm" color="success"
+                                    onClick={() => this.goMyData(service_id, history)}>
+                              <i className="fa fa-pencil fa-lg icon-right-margin"></i>{t('btn.mydata')}
+                            </Button>
                           </CardBlock>
-                          <div className="card-button-box ">
-                            <Button size="sm" color="success" className="card-hover-down-button float-right"
-                                    onClick={() => this.goDetail(service_id, history)}>{t('btn.detail')}</Button>
-                            <Button size="sm" color="success" className="card-hover-down-button float-right"
-                                    onClick={() => this.goMyData(service_id, history)}>{t('btn.mydata')}</Button>
-                          </div>
                         </Card>
                       </Col>
                     )
