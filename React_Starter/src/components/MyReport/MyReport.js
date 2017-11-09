@@ -14,6 +14,7 @@ class MyReport extends Component {
     super(props);
     this.state = {
       data: null,
+      render_error: ""
     };
   }
 
@@ -47,7 +48,8 @@ class MyReport extends Component {
         this.setState({render_error: res.data.e_msg.message});
       }
     }).catch((error) => {
-      console.log('res', error);
+      this.setState({render_error: error.response.data.e_msg.message});
+      // console.log('error', error.response.data.e_msg.message);
     });
   }
   render() {
@@ -57,19 +59,26 @@ class MyReport extends Component {
         paddingTop: '200px'
       }
     };
+    const { t } = this.props
     return (
       <div className="animated fadeIn">
         <Row>
           {
-            isEmpty(this.state.data) ? (
-                <div className="sweet-loading" style={style.center}>
-                  <BeatLoader
-                    color={'#4A90E2'}
-                    loading={true}
-                    size={20}
-                  />
-                </div>
-              ) :
+            isEmpty(this.state.data) ?
+                this.state.render_error ? (
+                  <div className="sweet-loading" style={style.center}>
+                    {this.state.render_error} <br/>
+                    {t('null')}
+                  </div>
+                ) : (
+                  <div className="sweet-loading" style={style.center}>
+                    <BeatLoader
+                      color={'#4A90E2'}
+                      loading={true}
+                      size={20}
+                    />
+                  </div>
+                ) :
               this.state.data.map((item, i) => {
                 const job_id = item.id;
                 const service_id = item.service_id;
