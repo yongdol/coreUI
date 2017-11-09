@@ -48,8 +48,7 @@ class MyReport extends Component {
         this.setState({render_error: res.data.e_msg.message});
       }
     }).catch((error) => {
-      this.setState({render_error: error.response.data.e_msg.message});
-      // console.log('error', error.response.data.e_msg.message);
+      this.setState({data: null, render_error: error.response.data.e_msg.message});
     });
   }
   render() {
@@ -59,7 +58,7 @@ class MyReport extends Component {
         paddingTop: '200px'
       }
     };
-    const { t } = this.props
+    const { t } = this.props;
     return (
       <div className="animated fadeIn">
         <Row>
